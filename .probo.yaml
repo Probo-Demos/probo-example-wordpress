@@ -1,0 +1,25 @@
+image: proboci/ubuntu-14.04-lamp:7.0-beta
+assets:
+  - wordpress_github.sql.gz
+steps:
+  - name: Check wp-cli.
+    plugin: Script
+    script:
+      - wp --info --allow-root
+  - name: Update wp-cli.
+    plugin: Script
+    script:
+      - wp cli update --allow-root --yes
+  - name: Check wp-cli version again.
+    plugin: Script
+    script:
+      - wp --info --allow-root
+  - name: Wordpress site setup.
+    plugin: WordPressApp
+    database: 'wordpress_github.sql.gz'
+    databaseName: 'wordpress'
+    databaseGzipped: true
+    subDirectory: 'code'
+    devDomain: 'http://wordpress482.local/'
+    devHome: 'http://wordpress482.local/'
+    flushCaches: true
