@@ -1,0 +1,59 @@
+# WordPress #
+############
+license.txt
+readme.html
+sitemap.xml
+wp-config.php
+wp-config-local.php
+wp-cli.local.yml
+
+# Common wp-content paths
+wp-content/advanced-cache.php
+wp-content/backup-db/
+wp-content/backups/
+wp-content/backupwordpress-*/
+wp-content/blogs.dir/
+wp-content/cache/
+wp-content/managewp/backups/
+wp-content/updraft/
+wp-content/upgrade/
+wp-content/uploads
+wp-content/wp-cache-config.php
+
+# Avoid accidental modification of pantheon.upstream.yml in sites
+# created from Pantheon upstream
+pantheon.upstream.yml
+
+# Packages #
+############
+*.7z
+*.dmg
+*.gz
+*.bz2
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+*.tgz
+
+# Logs and databases #
+######################
+*.log
+*.sql
+
+# OS generated files #
+######################
+.DS_Store*
+ehthumbs.db
+Icon?
+Thumbs.db
+._*
+
+# Vim generated files #
+######################
+*.un~
+
+# SASS #
+##########
+.sass-cache
