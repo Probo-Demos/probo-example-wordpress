@@ -1,4 +1,4 @@
-image: proboci/ubuntu-14.04-lamp:php5.6-nightly
+image: proboci/ubuntu-14.04-lamp:latest
 assets:
   - wordpress_github.sql.gz
 steps:
