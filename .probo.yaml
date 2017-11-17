@@ -1,0 +1,18 @@
+image: proboci/ubuntu-14.04-lamp:php5.6-nightly
+steps:
+  - name: Checking ubuntu, apache, mysql, and php version.
+    plugin: Script
+    script:
+      - lsb_release -a
+      - mysql --version
+      - apache2 -version
+      - php -v
+  - name: Check working directory and list contents.
+    plugin: Script
+    script:
+      - pwd
+      - ls -la -h
+  - name: Check wp-cli version.
+    plugin: Script
+    script:
+      - wp --info --allow-root
