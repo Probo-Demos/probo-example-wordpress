@@ -2,7 +2,7 @@ image: proboci/ubuntu-16.04-lamp:php7.2-nightly
 assets:
   - wordpress_github.sql.gz
 steps:
-  - name: Check wp-cli.
+  - name: Check wp-cli..
     plugin: Script
     script:
       - wp --info --allow-root
