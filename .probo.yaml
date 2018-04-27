@@ -14,7 +14,7 @@ steps:
     plugin: Script
     script:
       - wp --info --allow-root
-  - name: Wordpress site setup.
+  - name: Wordpress site setup..
     plugin: WordPressApp
     database: 'wordpress_github.sql.gz'
     databaseName: 'wordpress'
