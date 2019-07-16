@@ -1,0 +1,21 @@
+image: proboci/ubuntu-16.04-lamp:php-7.2
+steps:
+  - name: Download Wordpress latest release.
+    plugin: Script
+    script: |
+      wget -c https://wordpress.org/latest.tar.gz -O - | tar -xz -C /src
+  - name: Update wp-cli.
+    plugin: Script
+    script: |
+      wp cli update --allow-root --yes
+  - name: Site setup
+    plugin: WordPressApp
+    subDirectory: 'wordpress'
+    devDomain: 'http://example.com'
+    devHome: 'http://example.com/'
+    flushCaches: true
+  - name: Install WordPress
+    plugin: Script
+    script: |
+      cd /src/wordpress
+      wp core install --url=$BUILD_DOMAIN --title=Example --admin_user=supervisor --admin_password=strongpassword --admin_email=info@example.com --allow-root
