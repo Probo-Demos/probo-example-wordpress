@@ -8,7 +8,7 @@ steps:
     plugin: Script
     script: |
       wp cli update --allow-root --yes
-  - name: Site setup
+  - name: Wordpress site setup.
     plugin: WordPressApp
     subDirectory: 'wordpress'
     devDomain: 'http://example.com'
