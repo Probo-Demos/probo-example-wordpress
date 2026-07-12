@@ -48,28 +48,6 @@ Use the **Log in** link in the demo page's nav (or go to `/wp-login.php`
 directly). After logging in, the nav switches to **Log out** and the WordPress
 version card shows the current username.
 
-## Run locally
-
-```bash
-docker compose up -d
-# then open http://localhost:8013
-```
-
-Simulate a Probo build environment by uncommenting the `SetEnv` lines at the
-bottom of [`wordpress/.htaccess`](wordpress/.htaccess) (variables must reach
-the web server's PHP process, which `docker exec -e` cannot do):
-
-```apache
-SetEnv PROBO_ENVIRONMENT TRUE
-SetEnv BUILD_ID abc123
-SetEnv BRANCH_NAME main
-SetEnv DEMO_CUSTOM_VAR hello-from-probo
-```
-
-The page reads the environment live per request — no restart needed — so the
-tables reflect whatever the server currently exposes. On a real Probo build the
-variables come from the container environment via `envvars-swap.sh` instead.
-
 ## How it runs in a Probo WordPress container
 
 `.probo.yaml` uses `type: lamp` with `php: 8.4` and the built-in **WordPressApp**
